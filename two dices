@@ -24,9 +24,9 @@
 		ch=1+Math.floor(Math.random()*6);
 		sum+=ch;
 		dx=dicex+150;
-		drawface(ch);111111
+		drawface(ch);
 
-		/*if (firstturn) {
+		if (firstturn) {
 			switch(sum){
 				case 7:
 				case 11:
@@ -62,8 +62,15 @@
 				firstturn=true;
 				document.f.point.value="";
 				break;
+
+				default:
+				document.f.outcome.value="";
+				document.f.stage.value="back to the first throw";
+				document.f.point.value="";
+				firstturn=true;
+				break;
 			}
-		}*/
+		}
 	}
 
 	function drawface(n){
@@ -107,32 +114,32 @@
 	function draw1(){
 		var dotx;
 		var doty;
-		ctx.beginPath;
+		ctx.beginPath();
 		dotx=dx+.5*dicewidth;
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		ctx.closePath;
+		ctx.closePath();
 		ctx.fill();
 		}
 
 	function draw2(){
 		var dotx;
 		var doty;
-		ctx.beginPath;
+		ctx.beginPath();
 		dotx=dx+3*dotrd;
 		doty=dy+3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		dotx=dx+dicewidth-3*dotrd;
 		doty=dy+diceheight-3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		ctx.closePath;
+		ctx.closePath();
 		ctx.fill();
 		}
 
 	function draw4(){
 		var dotx;
 		var doty;
-		ctx.beginPath;
+		ctx.beginPath();
 		dotx=dx+3*dotrd;
 		doty=dy+3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
@@ -145,21 +152,21 @@
         dotx=dx+dicewidth-3*dotrd;
 		doty=dy+3*dotrd;
         ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		ctx.closePath;
+		ctx.closePath();
 		ctx.fill();
 		}
 
 	function draw2mind(){
 		var dotx;
 		var doty;
-		ctx.beginPath;
+		ctx.beginPath();
 		dotx=dx+3*dotrd;
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		dotx=dx+dicewidth-3*dotrd;
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		ctx.closePath;
+		ctx.closePath();
 		ctx.fill();
 		}
 
