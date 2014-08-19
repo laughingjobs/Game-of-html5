@@ -16,17 +16,17 @@
 
 	function throwdice(){
 		var sum;
-		var ch=1+Math.floor(Math.radom()*6);
+		var ch=1+Math.floor(Math.random()*6);
 		sum=ch;
 		dx=dicex;
 		dy=dicey;
 		drawface(ch);
-		ch=1+Math.floor(Math.radom()*6);
+		ch=1+Math.floor(Math.random()*6);
 		sum+=ch;
 		dx=dicex+150;
-		drawface(ch);
+		drawface(ch);111111
 
-		if (firstturn) {
+		/*if (firstturn) {
 			switch(sum){
 				case 7:
 				case 11:
@@ -50,20 +50,20 @@
 		else{
 			switch(sum){
 				case point:
-				document.f.outcome="you win!!!";
-				document.f.stage="back to the first throw";
+				document.f.outcome.value="you win!!!";
+				document.f.stage.value="back to the first throw";
 				firstturn=true;
-				document.f.point="";
+				document.f.point.value="";
 				break;
 
 				case 7:
-				document.f.outcome="you lose*_*";
-				document.f.stage="back to the first throw";
+				document.f.outcome.value="you lose*_*";
+				document.f.stage.value="back to the first throw";
 				firstturn=true;
-				document.f.point="";
+				document.f.point.value="";
 				break;
 			}
-		}
+		}*/
 	}
 
 	function drawface(n){
@@ -78,25 +78,31 @@
 			case 1:
 			draw1();
 			break;
+
 			case 2:
 			draw2();
 			break;
+
 			case 3:
 			draw2();
 			draw1();
 			break;
+
 			case 4:
 			draw4();
 			break;
+
 			case 5:
 			draw1();
 			draw4();
 			break;
+
 			case 6:
 			draw4();
 			draw2mind();
 			break;
 		}
+	}
 
 	function draw1(){
 		var dotx;
@@ -106,55 +112,55 @@
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		ctx.closePath;
-		ctx.fill;
+		ctx.fill();
 		}
 
 	function draw2(){
 		var dotx;
 		var doty;
 		ctx.beginPath;
-		dotx=dx+3*dicewidth;
-		doty=dy+3*diceheight;
+		dotx=dx+3*dotrd;
+		doty=dy+3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		dotx=dx+dicewidth-3*dicewidth;
-		doty=dy+diceheight-3*diceheight;
+		dotx=dx+dicewidth-3*dotrd;
+		doty=dy+diceheight-3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		ctx.closePath;
-		ctx.fill;
+		ctx.fill();
 		}
 
 	function draw4(){
 		var dotx;
 		var doty;
 		ctx.beginPath;
-		dotx=dx+3*dicewidth;
-		doty=dy+3*diceheight;
+		dotx=dx+3*dotrd;
+		doty=dy+3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		dotx=dx+dicewidth-3*dicewidth;
-		doty=dy+diceheight-3*diceheight;
+		dotx=dx+dicewidth-3*dotrd;
+		doty=dy+diceheight-3*dotrd;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		dotx=dx+3*dicewidth;
-		doty=dy+diceheight-3*diceheight;
+		dotx=dx+3*dotrd;
+		doty=dy+diceheight-3*dotrd;
         ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-        dotx=dx+dicewidth-3*dicewidth;
-		doty=dy+3*diceheight;
+        dotx=dx+dicewidth-3*dotrd;
+		doty=dy+3*dotrd;
         ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		ctx.closePath;
-		ctx.fill;
+		ctx.fill();
 		}
 
 	function draw2mind(){
 		var dotx;
 		var doty;
 		ctx.beginPath;
-		dotx=dx+3*dicewidth;
+		dotx=dx+3*dotrd;
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
-		dotx=dx+dicewidth-3*dicewidth;
+		dotx=dx+dicewidth-3*dotrd;
 		doty=dy+.5*diceheight;
 		ctx.arc(dotx,doty,dotrd,0,Math.PI*2,true);
 		ctx.closePath;
-		ctx.fill;
+		ctx.fill();
 		}
 
 </script>
