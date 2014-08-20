@@ -1,0 +1,28 @@
+<html>
+<head></head>
+<body onload="init();">
+
+<script  type="text/javascript">
+var img=new Image();
+img.src="1.gif";
+function init () {
+	var ctx=document.getElementById('c').getContext('2d');
+	ctx.drawImage(img,0,0,30,30);
+}
+			
+</script>
+
+<canvas id="c" width="400" height="300">
+	your browser doesn't support html5!
+</canvas>
+<!-- <br>
+<button onclick="throwdice();">Throw Dice</button>
+
+<form name="f">
+	Stage<input name="stage" value="First Throw"/>
+	Point<input name="point" value="" />
+	Outcome<input name="outcome" value=""/>
+</form> -->
+
+</body>
+</html>
