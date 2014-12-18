@@ -1,0 +1,178 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,target-densitydpi=medium-dpi,initial-scale=1.0, maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+<!-- <meta http-equiv="x-ua-compatible" content="ie=7" />-->
+<meta name="format-detection" content="telephone=no" />
+<!--ios下禁止浏览器自动识别手机号-->
+
+<meta content="半半,cosplay,coser,二次元,导师,竞技平台,巨星计划,漫展,acg,漫友,动漫社交,社交软件,社交app" name="keywords">
+</meta>
+<meta content="半半，漫友文化打造的服务于动漫COSPLAY人群的社交软件；超过50位知名COSER强势驻站，首批近千漫迷疯狂内测，每周现金奖励发放。国内唯一的线上COSPLAY竞技平台！" name="description">
+</meta>
+<title>半半上传页面</title>
+
+<!--<script type="text/javascript" src="js/jquery-1.7.2.js"></script>-->
+<!--<script type="text/javascript" src="js/html5.js"></script>
+<script type="text/javascript" src="js/ind.js"></script>-->
+<style type="text/css">
+* { margin: 0; padding: 0 }
+body { font: normal 100%; font-family: microsoft yahei, simsun; color: #333; margin: 0 auto; overflow-x: hidden; }
+h1,
+h2,
+h3 { font-weight: normal }
+ul { list-style-type: none }
+a { text-decoration: none }
+.boxbox::after { content: "."; clear: both; display: block; font-size: 0; line-height: 0; height: 0; visibility: hidden; overflow: hidden }
+img { /*behavior:url(images/iepngfix.htc); */ border: 0; max-width: 100%; border: none }
+section,
+article,
+aside,
+header,
+footer,
+nav,
+dialog,
+figure { display: block; }
+.bg { width: 100%; height: 430px; background: #D7B3F0 }
+.main { width: 30%; margin: 0 auto; min-width: 700px; padding: 40px 0;  }
+.cont { width: 40%; float: right; }
+.main h2 { font-size: 17px }
+.import input { display: block; outline: medium; height: 24px; margin: 20px 0; color: #ccc; border-radius: 3px; border: none; padding: 2px 5px }
+.import input:focus { color: #000 }
+.txt { width: 200px; line-height: 23px }
+.txt_Sec { position: relative }
+.sec_P { position: absolute; z-index: 3; top: 6px; left: 7px; color: #CCC; font-size: 12px; }
+#sub { border: 0; border: none; background: #9C189C; color: #fff; height: 29px; line-height: 28px; text-align: center; width: 210px; font-family:microsoft yahei,simsun}
+#sub:hover { background: #880888 }
+.bottom { font-size: 12px }
+.buttons {margin: 15px 0 20px;}
+.buttons ul li a{ display:block; height:42px; width:210px; border:1px solid #fff;  border-radius:5px; margin:8px 0; color:#fff}
+.buttons ul li a:hover{ border:1px solid #880888}
+.buttons ul li a span{ display:inline-block; width:33px; height:33px; margin-top:5px; margin-left:50px}
+.buttons ul li a span.atext{ width:50px;  line-height:33px; margin-left:10px}
+.buttons ul li a span.img{ float:left}
+.buttons ul li a.weibo span.img{background: url(images/login_icons_small.png) 0 0 no-repeat;}
+.buttons ul li a.qzone span.img{background: url(images/login_icons_small.png) -39px 0 no-repeat;}
+
+
+
+
+</style>
+<script type="text/javascript" src="js/jquery-1.7.2.js"></script>
+<script src="http://tjs.sjs.sinajs.cn/open/api/js/wb.js?appkey=3438282109" type="text/javascript" charset="utf-8"></script>
+<script type="text/javascript" src="http://qzonestyle.gtimg.cn/qzone/openapi/qc_loader.js" data-appid="101179031" data-redirecturi="http://www.imacg.cn/uploadweb/" charset="utf-8"></script>
+<script type="text/javascript">
+$(function()
+{
+	$("#textadd").focus(function()
+	{
+		if($(this).val()=="半半注册邮箱")
+		{
+				$(this).val("")
+		}
+	
+	}).blur(function()
+	{
+		
+			if($(this).val()=="")
+		{
+				$(this).val("半半注册邮箱")
+				
+		}
+	})
+	
+	
+	$("#textsec").focus(function()
+	{
+		if($(this).val()=="")
+		{
+				$(".sec_P").hide();
+		}
+	
+	}).blur(function()
+	{
+		
+			if($(this).val()=="")
+		{
+				$(".sec_P").show();
+				
+		}
+	})
+	
+
+	
+	
+	
+	
+})
+	
+	
+WB2.anyWhere(function (W) {
+    W.widget.connectButton({
+        id: "wb_connect_btn",
+        type: '3,2',
+        callback: {
+            login: function (o) { //登录后的回调函数
+                alert("login: " + o.screen_name)
+            },
+            logout: function () { //退出后的回调函数
+                alert('logout');
+            }
+        }
+    });
+});
+
+QC.Login({
+       btnId:"qqLoginBtn"   //插入按钮的节点id
+    
+});
+
+</script>
+</head>
+<body >
+<form>
+  <div class="wrap">
+    <div class="bg">
+      <div class="main boxbox">
+        <div class="cont">
+          <h2>登录半半</h2>
+          <div class="import">
+            <input type="text" id="textadd" name="textadd" value="半半注册邮箱" class="txt">
+            <div class="txt_Sec">
+              <input type="password"  id="textsec" name="textsec"  class="txt" >
+              <p class="sec_P">密码</p>
+            </div>
+            <input type="submit" id="sub" name="sub" value="登录" class="txt">
+          </div>
+          <div class="bottom">
+            <h2>社会账号直接登录</h2>
+                       
+            <div class="buttons">
+            <ul class="boxbox">
+            <li>
+            <a href="/oauth/weibo/instant_login/?_ref=frame" title="新浪微博帐号登录" rel="nofollow" class="weibo">
+            <span class="img"></span>
+            <span class="atext">微博登录</span>           
+            </a></li>
+            <li>
+            <a href="/oauth/qzone/instant_login/?_ref=frame" title="QQ帐号登录" rel="nofollow" class="qzone">
+              <span class="img"></span>
+            <span  class="atext">QQ登录</span>      
+            </a>
+</li>
+            
+            </ul>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>
+</form>
+
+<div id="wb_connect_btn" ></div>
+<span id="qqLoginBtn" >QQ登录</span>
+</body>
+</html>
