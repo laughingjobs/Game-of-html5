@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <script src="javascript/jquery-2.1.1.js" type="text/javascript"></script>
+    <script src="javascript/api.js" type="text/javascript"></script>
+
+    <script>
+
+        // 服务器地址与端口 // 开发服务器
+        var base_url = "http://112.124.16.50:9020";
+
+        /*
+         * U 函数，对URL进行基本的URL组装
+         *
+         * @param mod 模块名
+         * @param act 方法名
+         * @return 组合好的url.
+         */
+        function U(mod, act) {
+            var url = base_url + "/index.php?app=api&mod=" + mod +"&act=" + act;
+            return url;
+        }
+
+        $(document).ready(function ready(){
+            $("#sub").click(function send(){
+                var data = {"login":$("#textadd").val(), "password":$("#textsec").val()};
+
+                $.postJSON(U("Passport", "login"), data, function (data, status) {
+                    console.log(data);
+//                    alert(data.message);
+                    if(data.code==200){
+                        window.location.href = "up.html";
+                    }
+                });
+
+
+
+        });
+        })
+
+    </script>
+
+</head>
+
+<body>
+<h2>登录</h2>
+<div class="import">
+    <input type="text" id="textadd" name="textadd" value="半半注册邮箱" class="txt">
+    <div class="txt_Sec">
+        <input type="password"  id="textsec" name="textsec"  class="txt" >
+    </div>
+    <input type="submit" id="sub" name="sub" value="登录" class="txt">
+</div>
+</body>
+
+</html>
