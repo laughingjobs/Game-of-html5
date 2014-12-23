@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ <meta http-equiv="Access-Control-Allow-Origin" content="*">
+ <script src="javascript/jquery-2.1.1.js" type="text/javascript"></script>
+ <script src="javascript/api.js" type="text/javascript"></script>
+
+<script>
+
+// 服务器地址与端口 // 开发服务器
+var base_url = "http://112.124.16.50:9020";
+
+/*
+ * U 函数，对URL进行基本的URL组装
+ *
+ * @param mod 模块名
+ * @param act 方法名
+ * @return 组合好的url.
+ */ 
+function U(mod, act) {
+	var url = base_url + "/index.php?app=api&mod=" + mod +"&act=" + act;
+	return url;
+}
+
+
+
+$(document).ready(function ready(){
+  // $("button").click(function send(){    
+  //   var data = {"login":"279043170@qq.com", "password":"753951"};
+        
+  //   $.postJSON(U("Passport", "login"), data, function (data, status) {
+  //   	console.log(data);
+  //   	alert(data.message);
+  //   });
+    
+  // });
+
+  $(function  () {
+  $.postJSON(U("Production", "hot"),  function (data, status) {
+      console.log(data);
+      // alert(data.data[0].pname);
+      $("#1").text(data.data[0].pname);
+      $("#input1").val(data.data[0].pid);
+
+      $("#2").text(data.data[1].pname);
+      $("#input2").val(data.data[1].pid);
+
+      $("#3").text(data.data[2].pname);
+      $("#input3").val(data.data[2].pid);
+
+      $("#4").text(data.data[3].pname);
+      $("#input4").val(data.data[3].pid);
+
+      $("#5").text(data.data[4].pname);
+      $("#input5").val(data.data[4].pid);
+
+      $("#6").text(data.data[5].pname);
+      $("#input6").val(data.data[5].pid);
+
+      $("#7").text(data.data[6].pname);
+      $("#input7").val(data.data[6].pid);
+
+      $("#8").text(data.data[7].pname);
+      $("#input8").val(data.data[7].pid);
+
+      $("#9").text(data.data[8].pname);
+      $("#input9").val(data.data[8].pid);
+
+      $("#10").text(data.data[9].pname);
+      $("#input10").val(data.data[9].pid);
+    });
+});
+
+  $("button").click(function send(){    
+    var data = {"content":$("#textarea").val(), "pid":$("input[name='zuopin']:checked").val(),"attach_id":"|1|"};
+        
+    $.postJSON(U("Feed", "postFeed"), data, function (data, status) {
+      console.log(data);
+      alert(data.message);
+    });
+    
+  });
+});
+
+</script>
+
+</head>
+
+<body>
+
+<textarea id=textarea rows="10" cols="30"></textarea>
+
+<form>
+<input id="input1" type="radio" name="zuopin" value="" /> <p id="1"></p>
+<br />
+<input id="input2" type="radio" name="zuopin" value="" /> <p id="2"></p>
+<br />
+<input id="input3" type="radio" name="zuopin" value="" /> <p id="3"></p>
+<br />
+<input id="input4" type="radio" name="zuopin" value="" /> <p id="4"></p>
+<br />
+<input id="input5" type="radio" name="zuopin" value="" /> <p id="5"></p>
+<br />
+<input id="input6" type="radio" name="zuopin" value="" /> <p id="6"></p>
+<br />
+<input id="input7" type="radio" name="zuopin" value="" /> <p id="7"></p>
+<br />
+<input id="input8" type="radio" name="zuopin" value="" /> <p id="8"></p>
+<br />
+<input id="input9" type="radio" name="zuopin" value="" /> <p id="9"></p>
+<br />
+<input id="input10" type="radio" name="zuopin" value="" /> <p id="10"></p>
+<br />
+</form>
+<button>发布</button>
+</body>
+</html>
